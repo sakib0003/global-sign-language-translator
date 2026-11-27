@@ -1,0 +1,4 @@
+Model,Accuracy (%),Training Time (seconds)
+SVM_RBF,80.69,40.27
+RandomForest,67.14,11.11
+ExtraTrees,65.76,3.68

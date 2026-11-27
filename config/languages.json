@@ -1,0 +1,20 @@
+{
+  "BdSL": {
+    "display_name": "Bangla Sign Language",
+    "tts_language": "bn",
+    "dataset_file": "data/bdsl_landmarks.csv",
+    "model_file": "models/bdsl_model.joblib"
+  },
+  "ASL": {
+    "display_name": "American Sign Language",
+    "tts_language": "en",
+    "dataset_file": "data/asl_landmarks.csv",
+    "model_file": "models/asl_model.joblib"
+  },
+  "BSL": {
+    "display_name": "British Sign Language",
+    "tts_language": "en",
+    "dataset_file": "data/bsl_landmarks.csv",
+    "model_file": "models/bsl_model.joblib"
+  }
+}

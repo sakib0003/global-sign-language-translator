@@ -1,0 +1,87 @@
+
+# ==================================
+# Python cache and compiled files
+# ==================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ==================================
+# Virtual environments
+# ==================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==================================
+# Datasets - DO NOT UPLOAD
+# ==================================
+datasets/
+Sign Language/
+
+# ==================================
+# Trained models - DO NOT UPLOAD
+# ==================================
+models/
+*.pt
+*.pth
+*.joblib
+*.pkl
+*.h5
+*.onnx
+
+# ==================================
+# YOLO training outputs
+# ==================================
+runs/
+wandb/
+
+# ==================================
+# Temporary and log files
+# ==================================
+*.log
+*.tmp
+*.temp
+*.bak
+
+# ==================================
+# Environment variables and secrets
+# ==================================
+.env
+.env.*
+!.env.example
+
+# ==================================
+# Jupyter Notebook
+# ==================================
+.ipynb_checkpoints/
+
+# ==================================
+# IDE settings
+# ==================================
+.vscode/
+.idea/
+
+# ==================================
+# Operating system files
+# ==================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==================================
+# Python testing and coverage
+# ==================================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==================================
+# Build files
+# ==================================
+build/
+dist/
+*.egg-info/
