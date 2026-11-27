@@ -1,62 +1,193 @@
-# Global AI Sign Language Translator (starter project)
+# Global AI Sign Language Translator
 
-A modular Python research prototype based on the uploaded proposal: MediaPipe hand landmarks, OpenCV, a static-sign classifier, Streamlit UI, and optional text-to-speech.
+An AI-powered sign language recognition project, starting with **Bangladesh Sign Language (BdSL)**, with a long-term vision of supporting multiple sign languages worldwide.
 
-## Important scope note
-Sign languages are distinct natural languages. BdSL, ASL, and BSL require separately collected and validated datasets and separately trained models. This starter supports separate language folders/configuration, but it does **not** ship with a sign-language dataset or a pretrained model. The first milestone recognizes static, single-hand classes that you record yourself. It is not yet continuous sentence translation or a production interpreter.
+## Project Overview
 
-## 1. Requirements
-- Python 3.10 or 3.11 recommended
-- Webcam
-- VS Code (or another editor)
-- Internet for installing packages and gTTS speech generation
+Global AI Sign Language Translator aims to recognize sign language gestures using computer vision and machine learning.
 
-## 2. Setup (Windows PowerShell)
+The project currently focuses on three recognition tasks:
+
+- **Alphabet Recognition:** 37 BdSL alphabet classes.
+- **Digit Recognition:** 10 BdSL digit classes.
+- **Word Recognition:** 126 BdSL word classes.
+
+The long-term goal is to develop a system that can help bridge communication gaps between Deaf and hearing communities.
+
+## Current Development Status
+
+| Feature | Status |
+|---|---|
+| BdSL Alphabet Recognition | Implemented |
+| BdSL Digit Recognition | Implemented |
+| BdSL Word Recognition | Implemented |
+| Hand Landmark Extraction | Implemented |
+| Pose Landmark Extraction | Implemented |
+| Webcam Recognition | In development |
+| Sentence Builder | Planned |
+| Bengali Text-to-Speech | Planned |
+| English Translation | Planned |
+| ASL Support | Future Development |
+
+## Technology Stack
+
+- Python
+- OpenCV
+- MediaPipe
+- Scikit-learn
+- YOLO
+- NumPy
+- Pandas
+- Joblib
+
+## Machine Learning Models
+
+### 1. BdSL Alphabet Recognition
+
+- Dataset: BdSL47
+- Classes: 37
+- Features: 63 hand landmark coordinates
+- Model: Support Vector Machine (RBF)
+- Signer-independent test accuracy: 80.69%
+
+### 2. BdSL Digit Recognition
+
+- Dataset: BdSL47
+- Classes: 10
+- Features: Normalized hand landmarks
+- Model: Machine Learning classifier
+- Signer-independent test accuracy: 96%
+
+### 3. BdSL Word Recognition
+
+- Dataset: BdSL126
+- Classes: 126
+- Features: Hand and body pose landmarks
+- Model: ExtraTrees Classifier
+- Reported validation accuracy: 95.82%
+
+**Evaluation Note:** The word recognition result comes from the dataset's existing train/validation split. A frame-group overlap audit found related frame sequences in both splits. Therefore, this score should not be interpreted as independent signer-level performance or real-world webcam accuracy. Further evaluation is required.
+
+## Datasets
+
+The project uses the following research datasets:
+
+- **BdSL47:** [Mendeley Data – BdSL47](https://data.mendeley.com/datasets/pbb3w3f92y/3)
+- **BdSL126:** [Mendeley Data – BdSL126](https://data.mendeley.com/datasets/39j93bttsr/1)
+
+Please follow the original dataset licenses and usage conditions.
+
+Datasets and trained model files are not included in this GitHub repository.
+
+## Project Structure
+
+```text
+global_sign_language_translator/
+│
+├── app.py
+├── collect_data.py
+├── train.py
+├── config_loader.py
+├── requirements.txt
+├── README.md
+│
+├── config/
+│   └── languages.json
+│
+├── scripts/
+│   ├── landmark_utils.py
+│   ├── prepare_bdsl47.py
+│   ├── train_bdsl47.py
+│   ├── train_bdsl126_pose_model.py
+│   ├── unified_bdsl_webcam.py
+│   └── other training and evaluation scripts
+│
+├── src/
+│   └── features.py
+│
+└── reports/
+    └── model evaluation reports
+```
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/sakib0003/global-sign-language-translator.git
+cd global-sign-language-translator
+```
+
+### 2. Create a virtual environment
+
+Windows PowerShell:
+
 ```powershell
 py -3.10 -m venv .venv
 .venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-macOS/Linux:
-```bash
-python3.10 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+
+### 4. Download datasets
+
+Download the BdSL47 and BdSL126 datasets from their original sources and place them in the appropriate dataset folders.
+
+### 5. Train models
+
+Use the relevant scripts in the `scripts/` directory to prepare datasets, extract landmarks, and train models.
+
+### 6. Run webcam recognition
+
+```powershell
+python scripts/unified_bdsl_webcam.py
 ```
 
-If MediaPipe installation fails, use Python 3.10/3.11 in a fresh virtual environment and reinstall the pinned requirements.
+Select a recognition mode from the application.
 
-## 3. Collect your first dataset
-Start with **one language only**, e.g. ASL, and two clearly distinguishable static signs. Collect at least 100 samples per class, varying distance, angle, lighting, and signer. Do not mix different languages under one model.
-```bash
-python collect_data.py --language ASL --label hello --samples 120
-python collect_data.py --language ASL --label thanks --samples 120
-```
-A webcam window opens. Press SPACE for each sample; Q quits. Keep labels consistent. The CSV is saved under `data/`.
+Note: Required datasets and trained model files must be prepared locally before running the corresponding recognition features.
 
-For BdSL, use signs verified by fluent BdSL users and repeat with `--language BdSL`. Do not assume an ASL sign has the same meaning or form in BdSL.
+## Important Limitations
 
-## 4. Train
-```bash
-python train.py --language ASL
-```
-The script prints accuracy, precision, recall, and F1-score, then saves `models/asl_model.joblib`. Collect at least two classes before training.
+- Current development focuses on static sign recognition.
+- Recognition accuracy can vary with lighting, camera position, background, and signer.
+- Dataset validation accuracy does not guarantee real-world performance.
+- Continuous sign language and full sentence translation are not yet complete.
+- BdSL, ASL, and other sign languages require separate datasets and language-specific models.
 
-## 5. Run the web app
-```bash
-streamlit run app.py
-```
-Select the matching language, use the camera widget, and inspect the predicted class. The browser may ask for camera permission.
+## Future Roadmap
 
-## 6. Expand toward a global system
-1. Build separate verified datasets for BdSL, ASL, BSL, etc.
-2. Add signer-independent train/test splits (do not let the same person's samples leak into both sets).
-3. Add two-hand support and facial/body features where the language requires them.
-4. For dynamic signs, record landmark sequences (e.g. 30-60 frames per example) and train an LSTM/GRU or temporal CNN.
-5. Add a language-specific vocabulary/grammar layer. A sign classifier alone is not a sentence translator.
-6. Evaluate with Deaf/native signers; report per-class metrics, confusion matrix, latency, and failure cases.
+1. Improve BdSL alphabet and digit recognition.
+2. Improve word recognition using independent signer and recording splits.
+3. Develop a Bengali sentence builder.
+4. Add Bengali text-to-speech.
+5. Explore English translation.
+6. Expand support to ASL and other sign languages.
+7. Evaluate the system with Deaf and fluent sign language users.
 
-## Data ethics
-Obtain informed consent before recording people. Avoid collecting names or identifying information unless essential and consented. Store videos securely, allow deletion, and document dataset license and provenance. Do not present this prototype as an authoritative interpreter for medical, legal, or emergency settings.
+## Ethical Considerations
+
+Sign languages are complete natural languages, not simply collections of hand gestures.
+
+The project aims to support accessibility and communication. Dataset collection should respect consent, privacy, licensing, and the linguistic knowledge of Deaf communities.
+
+This project is a research and development prototype, not an authoritative interpreter for medical, legal, or emergency communication.
+
+## Contributing
+
+Contributions, suggestions, research collaboration, and feedback are welcome.
+
+## License
+
+A license has not yet been selected. Please contact the repository owner before redistributing or reusing project materials.
+
+---
+
+**Project:** Global AI Sign Language Translator  
+**Initial Language:** Bangladesh Sign Language (BdSL)  
+**GitHub:** https://github.com/sakib0003/global-sign-language-translator
