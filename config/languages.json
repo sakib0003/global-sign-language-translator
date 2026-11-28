@@ -1,20 +1,17 @@
-{
+﻿{
   "BdSL": {
-    "display_name": "Bangla Sign Language",
+    "display_name": "বাংলা সাইন ল্যাঙ্গুয়েজ",
     "tts_language": "bn",
-    "dataset_file": "data/bdsl_landmarks.csv",
-    "model_file": "models/bdsl_model.joblib"
+    "type": "bdsl47",
+    "alphabet_model_file": "models/bdsl47_alphabet_normalized.joblib",
+    "digit_model_file": "models/bdsl47_digits_normalized.joblib"
   },
   "ASL": {
     "display_name": "American Sign Language",
     "tts_language": "en",
-    "dataset_file": "data/asl_landmarks.csv",
-    "model_file": "models/asl_model.joblib"
-  },
-  "BSL": {
-    "display_name": "British Sign Language",
-    "tts_language": "en",
-    "dataset_file": "data/bsl_landmarks.csv",
-    "model_file": "models/bsl_model.joblib"
+    "type": "asl_landmark",
+    "model_file": "external/asl_landmark_project/models/sign_language_model.pkl",
+    "scaler_file": "external/asl_landmark_project/models/feature_scaler.pkl",
+    "metadata_file": "external/asl_landmark_project/models/metadata.json"
   }
 }

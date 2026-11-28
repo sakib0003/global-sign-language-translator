@@ -1,0 +1,142 @@
+BdSL126 Individual Image Pose + Hand Model
+=======================================================
+Training images: 10021
+Validation images: 2501
+Classes: 126
+Accuracy: 0.0740
+Top-5 Accuracy: 0.2107
+Macro F1: 0.0785
+Weighted F1: 0.0771
+
+               precision    recall  f1-score   support
+
+         Aage       0.10      0.05      0.06        21
+          Aat       0.04      0.05      0.05        20
+     Agamikal       0.09      0.04      0.06        24
+           Aj       0.29      0.24      0.26        17
+   Akashirong       0.00      0.00      0.00        20
+      America       0.00      0.00      0.00        17
+       Anondo       0.11      0.11      0.11        19
+        April       0.00      0.00      0.00        22
+         Asia       0.10      0.11      0.10        19
+       August       0.00      0.00      0.00        21
+       Badami       0.25      0.11      0.15        19
+   Bangladesh       0.12      0.12      0.12        17
+         Baro       0.00      0.00      0.00        18
+       Beguni       0.21      0.12      0.15        25
+       Bharot       0.17      0.10      0.12        21
+       Bidesh       0.25      0.20      0.22        20
+        Bikal       0.00      0.00      0.00        18
+       Bochor       0.09      0.06      0.07        17
+       Bogura       0.00      0.00      0.00        23
+    Borshakal       0.05      0.05      0.05        22
+Brihospotibar       0.00      0.00      0.00        19
+      Budhbar       0.20      0.16      0.18        19
+       Canada       0.00      0.00      0.00        19
+     Chandpur       0.14      0.06      0.09        16
+         Char       0.06      0.05      0.05        20
+      Chardik       0.05      0.05      0.05        22
+   Chattogram       0.26      0.26      0.26        19
+        Chhoy       0.18      0.20      0.19        20
+      College       0.00      0.00      0.00        18
+      Comilla       0.11      0.04      0.06        26
+     Congress       0.00      0.00      0.00        22
+       Curfew       0.26      0.23      0.24        22
+     December       0.00      0.00      0.00        21
+         Desh       0.12      0.11      0.11        19
+          Din       0.00      0.00      0.00        25
+     Dinajpur       0.00      0.00      0.00        17
+      Dokkhin       0.33      0.20      0.25        20
+          Dol       0.00      0.00      0.00        21
+         Dosh       0.05      0.07      0.06        15
+        Druto       0.12      0.05      0.07        21
+        Dupur       0.08      0.05      0.06        22
+        Elaka       0.01      0.47      0.02        17
+      Embassy       0.00      0.00      0.00        17
+       Europe       0.00      0.00      0.00        20
+     Faridpur       0.29      0.09      0.14        22
+     February       0.00      0.00      0.00        17
+       France       0.08      0.05      0.06        19
+      Germany       0.20      0.10      0.13        21
+     Ghoshona       0.00      0.00      0.00        23
+       Gonona       0.16      0.33      0.22        18
+      Gotokal       0.17      0.22      0.20        18
+         Gram       0.25      0.04      0.07        24
+   Grishmokal       0.17      0.12      0.14        24
+   Hemontokal       0.38      0.32      0.34        19
+        Holud       0.15      0.11      0.13        18
+         Iraq       0.12      0.10      0.11        21
+    Jailkhana       0.05      0.04      0.05        24
+     Jamalpur       0.07      0.04      0.05        23
+      January       0.07      0.06      0.06        18
+        Japan       0.12      0.09      0.10        23
+         Jati       0.12      0.16      0.13        19
+         Jela       0.00      0.00      0.00        21
+     Jindabad       0.00      0.00      0.00        20
+         July       0.20      0.12      0.15        16
+         June       0.00      0.00      0.00        21
+         Kalo       0.00      0.00      0.00        21
+      Khoyeri       0.07      0.05      0.06        22
+       Khulna       0.00      0.00      0.00        18
+     Khushtia       0.00      0.00      0.00        22
+   Koborsthan       0.00      0.00      0.00        15
+  Kolkarkhana       0.08      0.04      0.06        24
+       Komola       0.00      0.00      0.00        24
+        Korea       0.08      0.05      0.06        22
+        Kosom       0.10      0.17      0.13        18
+          Lal       0.00      0.00      0.00        25
+       London       0.00      0.00      0.00        19
+        March       0.00      0.00      0.00        19
+       Minute       0.45      0.43      0.44        21
+    Mohoadesh       0.13      0.11      0.12        19
+    Mongolbar       0.00      0.00      0.00        21
+  Narayanganj       0.00      0.00      0.00        18
+          Nil       0.05      0.07      0.06        14
+    Nirbachon       0.00      0.00      0.00        13
+     November       0.25      0.13      0.17        15
+    Odhibashi       0.07      0.05      0.05        22
+     Onekkhon       0.00      0.00      0.00        20
+        Pabna       0.44      0.20      0.28        20
+     Pakistan       0.00      0.00      0.00        22
+     Paradhin       0.20      0.10      0.13        21
+     Poshchim       0.00      0.00      0.00        16
+        Purbo       0.00      0.00      0.00        18
+     Rajarani       0.00      0.00      0.00        15
+     Rajshahi       0.06      0.05      0.06        19
+        Rasta       0.18      0.11      0.13        19
+          Rat       0.18      0.17      0.17        24
+      Robibar       0.07      0.06      0.06        17
+          Roj       0.00      0.00      0.00        25
+         Rong       0.00      0.00      0.00        21
+       Russia       0.00      0.00      0.00        25
+        Saarc       0.20      0.17      0.18        18
+         Sada       0.25      0.20      0.22        20
+   Saudiaarab       0.38      0.43      0.40        21
+        Shaat       0.14      0.05      0.07        20
+      Shadhin       0.00      0.00      0.00        18
+     Sheetkal       0.35      0.40      0.38        15
+   Shobshomoy       0.17      0.09      0.12        22
+       Shobuj       0.00      0.00      0.00        21
+       Shohor       0.14      0.05      0.07        21
+       Shokal       0.00      0.00      0.00        20
+     Shoptaho       0.00      0.00      0.00        16
+    Shorotkal       0.06      0.07      0.06        15
+    Shukrobar       0.08      0.05      0.06        19
+       Shunno       0.10      0.12      0.11        17
+        Sobha       0.14      0.06      0.09        16
+       Sombar       0.00      0.00      0.00        19
+        Somoy       0.20      0.15      0.17        20
+   Songhorsho       0.00      0.00      0.00        25
+      Sonibar       0.05      0.05      0.05        20
+       Sylhet       0.12      0.08      0.10        24
+      Tangail       0.00      0.00      0.00        22
+          Tin       0.20      0.27      0.23        15
+       Tokhon       0.13      0.14      0.14        14
+      Turshko       0.00      0.00      0.00        22
+         Upor       0.05      0.04      0.04        23
+    Uporibhag       0.11      0.14      0.12        21
+        Uttar       0.00      0.00      0.00        17
+
+     accuracy                           0.07      2501
+    macro avg       0.09      0.08      0.08      2501
+ weighted avg       0.09      0.07      0.08      2501
